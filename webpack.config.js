@@ -1,14 +1,22 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, './build');
-var APP_DIR = path.resolve(__dirname, './src/client');
+const BUILD_DIR = path.resolve(__dirname, './build');
+const APP_DIR = path.resolve(__dirname, './src/client');
+
+console.log('--------------------Build was started for: ', process.env.NODE_ENV, '--------------------');
+const isProd = process.env.NODE_ENV === 'production';
 
 const config = {
-    mode: 'development',
+    mode: isProd ? 'production' : 'development',
     entry: {
         main: APP_DIR + '/index.js'
     },
+    devServer: isProd ? {} : {
+        compress: true,
+        port: 9000
+    },
+    devtool: !isProd && 'inline-source-map',
     output: {
         filename: 'bundle.js',
         path: BUILD_DIR,

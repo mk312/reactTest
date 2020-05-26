@@ -4,6 +4,8 @@ import Summary from './Summary.jsx';
 import Title from './Title.jsx';
 import PostScriptum from './PostScriptum.jsx';
 
+import styles from './scss/styles.scss';
+
 export default class App extends Component {
     constructor(props) {
         super(props);
