@@ -17,8 +17,6 @@ In this case the app should be available at http://localhost:9000 (port changes 
 
 
 USEFUL COMMANDS:
-- npm run build-dev (with watchers for code changes) OR
 - npm run build-prod (one time build, optimized webpack mode)
-- npm run start-dev-server (webpack-dev-server for dev build)
 - npm run start-prod-server (nodemon server for prod build)
 - npm run test
