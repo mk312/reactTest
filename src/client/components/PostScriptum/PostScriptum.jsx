@@ -1,3 +1,5 @@
+import styles from './styles.scss';
+
 import React, { Component } from 'react';
 // Case 2
 
@@ -13,7 +15,7 @@ export default class PostScriptum extends Component {
     }
     render() {
         return (
-            <div>
+            <div className={styles.wrapper}>
                 <h4><em>P.S. Dear {this.props.username}, your status is '{this.state.userstatus}'.</em></h4>
                 {this.state.userstatus != 'Admin' ?
                     <button onClick={() => this.handleClick()}>Make me an admin</button> :

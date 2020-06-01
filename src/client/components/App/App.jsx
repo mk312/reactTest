@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import Article from './Article.jsx';
-import Summary from './Summary.jsx';
-import Title from './Title.jsx';
-import PostScriptum from './PostScriptum.jsx';
+import styles from './styles.scss';
 
-import styles from './scss/styles.scss';
+import React, { Component } from 'react';
+import Article from '../Article/Article.jsx';
+import Summary from '../Summary/Summary.jsx';
+import Title from '../Title/Title.jsx';
+import PostScriptum from '../PostScriptum/PostScriptum.jsx';
 
 export default class App extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className={styles.wrapper}>
                 <em>details: {this.props.info}</em>
                 <Title username={this.username}/>
                 <Article username={this.username} text='Where have you been?'/>
