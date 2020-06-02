@@ -55,6 +55,13 @@ const config = {
                         presets: ['react', 'es2015'] // Transpiles JSX and ES6
                     }
                 }]
+            },
+            {
+                test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
+                loader: 'file-loader',
+                options: {
+                   name: '[name].[ext]'
+                }
             }
         ],
 
