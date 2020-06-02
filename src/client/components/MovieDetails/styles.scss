@@ -1,0 +1,38 @@
+.wrapper {
+  padding: 75px 75px 75px 0;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.poster{
+  float: left;
+  width: 20%;
+  margin-right: 35px;
+}
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  margin-bottom: 14px;
+}
+.rating {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  margin-left: 21px;
+  margin-bottom: 7px;
+  justify-content: center;
+  text-align: center;
+  line-height: 35px;
+  color: #A1E66F;
+}
+
+.search,
+.release,
+.runtime {
+  display: inline-block;
+  margin: 21px 21px 21px 0;
+  color: #f65261;
+}
