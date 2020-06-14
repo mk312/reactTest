@@ -28,10 +28,10 @@ export default class Search extends PureComponent {
 
     render() {
         return (
-           <form className={styles.wrapper} onSubmit={this.handleSubmit}>
+           <form className={`js-search-form ${styles.wrapper}`} onSubmit={this.handleSubmit}>
                <div className={'row'}>
                    <div className={styles.title}>FIND YOUR MOVIE</div>
-                   <input className={styles.input} type="text" value={this.state.searchValue} onChange={this.handleSearchChange} />
+                   <input className={`js-search-input ${styles.input}`} type="text" value={this.state.searchValue} onChange={this.handleSearchChange} />
                    <input className={styles.submit} type="submit" value="SEARCH"/>
                </div>
 

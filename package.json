@@ -8,12 +8,55 @@
     "build-prod": "cross-env NODE_ENV=production webpack",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open",
     "prod": "npm-run-all --parallel start-prod-server build-prod",
-    "test": "jest"
+    "test": "jest",
+    "e2e-test": "cypress run -b chrome",
+    "e2e-test:open": "cypress open"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/client/components/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      ".*__snapshots__/.*"
+    ],
+    "coverageReporters": [
+      "json",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 55,
+        "functions": 50,
+        "lines": 55,
+        "statements": 55
+      }
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "modulePathIgnorePatterns": [
+      "/node_modules/",
+      "/cypress/"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@testing-library/dom": "^7.11.0",
+    "@testing-library/react": "^10.2.1",
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.0.0",
@@ -21,8 +64,10 @@
     "babel-preset-react": "^6.24.1",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
+    "cypress": "^4.8.0",
     "express": "^4.17.1",
     "file-loader": "^6.0.0",
+    "identity-obj-proxy": "^3.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
@@ -35,6 +80,7 @@
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
+    "webpack-babel-jest": "^1.0.4",
     "webpack-cli": "^3.3.11"
   },
   "devDependencies": {

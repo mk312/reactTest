@@ -30,7 +30,7 @@ export default class Search extends PureComponent {
 
                 <div className={styles.list}>
                     {this.props.moviesList.map((movie) => (
-                        <div key={movie.id} className={styles.movie}>
+                        <div key={movie.id} className={`js-movie-item ${styles.movie}`}>
                             <a href='#' onClick={() => this.props.handleMovieClick(movie.id)}>
                                 <img className={styles.poster} src={movie.poster_path}/>
                             </a>
