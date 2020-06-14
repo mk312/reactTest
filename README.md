@@ -20,3 +20,4 @@ USEFUL COMMANDS:
 - npm run build-prod (one time build, optimized webpack mode)
 - npm run start-prod-server (nodemon server for prod build)
 - npm run test
+- npm run e2e-test

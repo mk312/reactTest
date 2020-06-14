@@ -4,9 +4,12 @@ const Toggle = (props) => (
     <React.Fragment>
         {props.values.map((input) => (
             <React.Fragment key={input.id}>
-                <input type="radio" id={input.id} name="contact" value={input.value}
+                <input className={'js-toggle-radio-button'}
+                       type="radio" id={input.id}
+                       name="contact"
+                       value={input.value}
                        onChange={props.handleFilterChange}
-                       checked={props.filterValue === input.value}/>
+                       defaultChecked={props.filterValue === input.value}/>
                 <label htmlFor={input.id}>{input.value}</label>
             </React.Fragment>)
         )}

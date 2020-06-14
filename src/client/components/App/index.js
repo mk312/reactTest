@@ -13,7 +13,6 @@ export default class App extends Component {
             clickedMovie: null,
             searchResult: moviesList,
         };
-        this.username = 'World';
         this.handleMovieClick = (id) => {
             this.setState({
                 clickedMovie: moviesList.find((movieItem) => id == movieItem.id,
