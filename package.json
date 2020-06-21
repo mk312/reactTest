@@ -15,7 +15,7 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/client/components/**"
+      "src/client/**"
     ],
     "coveragePathIgnorePatterns": [
       ".*__snapshots__/.*"
