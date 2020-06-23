@@ -1,29 +1,44 @@
 import styles from './styles.scss';
 
 import React, { PureComponent } from 'react';
+import '@babel/polyfill';
+import { connect } from 'react-redux';
+import {updateSorting, requestMoviesArr, updateMoviesPage} from '../../actions/actions';
+
 import Toggle from '../basic/Toggle/';
-export default class Search extends PureComponent {
+
+class ItemsList extends PureComponent {
     constructor(props) {
         super(props);
-        this.state = {
-            sortingValue: 'RATING',
-        };
         this.handleSortingChange = (event) => {
-            this.setState({sortingValue: event.target.value});
+            this.props.onUpdateSorting(event.target.value);
+            this.props.onUpdateMoviesPage(0);
+            this.props.onRequestMoviesArr({...this.props.searchParams, offset:0, sortBy: event.target.value});
         };
+        this.handleScroll = () =>{
+            if(document.body.offsetHeight < window.innerHeight + document.body.scrollTop + 1) {
+                let newOffset = this.props.searchParams.offset +1;
+                this.props.onUpdateMoviesPage(newOffset);
+                this.props.onRequestMoviesArr({...this.props.searchParams, offset: newOffset});
+            }
+        }
     }
+
+    componentDidMount() {
+        this.props.onRequestMoviesArr(this.props.searchParams);
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
     render() {
-        // check for ErrorBoundary:
-        // throw new Error('I crashed!');
         return (
             <React.Fragment>
                 <div className={styles.result}>
                     <div className={styles.number}>{this.props.moviesList.length || 0} movies found</div>
                     <div className={styles.sort}>
-                        <div className={styles.sortTitle}>SORT BY {this.state.filterValue}</div>
+                        <div className={styles.sortTitle}>SORT BY</div>
 
                         <Toggle handleFilterChange={this.handleSortingChange}
-                                filterValue={this.state.sortingValue}
+                                filterValue={this.props.searchParams.sortBy}
                                 values={[{value: 'DATE', id: 'sv1'}, {value: 'RATING', id: 'sv2'}]} />
                     </div>
                 </div>
@@ -48,3 +63,19 @@ export default class Search extends PureComponent {
         );
     }
 }
+
+export default connect(
+    (state) => {
+        return {
+            moviesList: state.moviesList,
+            searchParams: state.searchParams,
+        };
+    },
+    (dispatch) => {
+        return {
+            onUpdateSorting: (sortBy) => dispatch(updateSorting(sortBy)),
+            onUpdateMoviesPage: (offset) => dispatch(updateMoviesPage(offset)),
+            onRequestMoviesArr: (searchParams) => dispatch(requestMoviesArr(searchParams)),
+        }
+    },
+)(ItemsList);

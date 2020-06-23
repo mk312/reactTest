@@ -1,29 +1,20 @@
 import React, { Component } from 'react';
+import '@babel/polyfill';
 import { moviesList } from './../mockMoviesList';
+import { connect } from 'react-redux';
+import {showMovie} from '../../actions/actions';
 
 import ErrorBoundary from '../ErrorBoundary/';
 import Search from '../Search/';
 import ItemsList from '../ItemsList/';
 import MovieDetails from '../MovieDetails/';
 
-export default class App extends Component {
+class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            clickedMovie: null,
-            searchResult: moviesList,
-        };
         this.handleMovieClick = (id) => {
-            this.setState({
-                clickedMovie: moviesList.find((movieItem) => id == movieItem.id,
-            )});
-        };
-        this.searchMovies = (searchParams) => {
-            if( searchParams.searchValue !== 'Quentin Tarantino' ){
-                this.setState({searchResult: []});
-            } else {
-                this.setState({searchResult: moviesList});
-            }
+            let clickedMovie = this.props.moviesList.find((movieItem) => id == movieItem.id);
+            this.props.onShowMovie(clickedMovie);
         };
     }
 
@@ -32,18 +23,31 @@ export default class App extends Component {
             <div>
                 <em>details: {this.props.info}</em>
                 <ErrorBoundary>
-                    { !this.state.clickedMovie ?
-                        <Search searchMovies={this.searchMovies}/> :
-                        <MovieDetails movie={this.state.clickedMovie}/>
+                    { !this.props.chosenMovie ?
+                        <Search/> :
+                        <MovieDetails movie={this.props.chosenMovie}/>
                     }
                 </ErrorBoundary>
 
                 <ErrorBoundary>
                     <ItemsList
-                        moviesList={this.state.searchResult}
                         handleMovieClick={this.handleMovieClick}/>
                 </ErrorBoundary>
             </div>
         );
     }
 }
+
+export default connect(
+    (state) => {
+        return {
+            moviesList: state.moviesList,
+            chosenMovie: state.chosenMovie,
+        };
+    },
+    (dispatch) => {
+        return {
+            onShowMovie: (clickedMovie) => dispatch(showMovie(clickedMovie)),
+        }
+    },
+)(App);
