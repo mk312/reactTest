@@ -1,1586 +1,227 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should show movieDetails when movieItem is clicked() 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div>
-        <em>
-          details: 
-        </em>
+exports[`App should dispatch SHOW_MOVIE and show one particular movie 1`] = `
+<div>
+  <div>
+    <em>
+      details: 
+      React Test App, PartI
+    </em>
+    <div
+      class="js-movie-details wrapper"
+    >
+      <img
+        class="poster"
+        src="media/51fY8NCyXpL._SX342_.jpg"
+      />
+      <div
+        class="title"
+      >
+        Kill Bill
+                
         <div
-          class="js-movie-details wrapper"
+          class="rating"
         >
-          <img
-            class="poster"
-            src="media/51fY8NCyXpL._SX342_.jpg"
-          />
-          <div
-            class="title"
-          >
-            Kill Bill
-                    
-            <div
-              class="rating"
-            >
-              5
-            </div>
-          </div>
-          <div>
-            Oscar winning
-          </div>
-          <div
-            class="release"
-          >
-            2000
-             
-          </div>
-          <div
-            class="runtime"
-          >
-            154
-             min
-          </div>
-          <div
-            class="overview"
-          >
-             American martial arts film written and directed by Quentin Tarantino. It stars Uma Thurman as the Bride, who swears revenge on a team of assassins (Lucy Liu, Michael Madsen, Daryl Hannah, and Vivica A. Fox) and their leader, Bill (David Carradine), after they try to kill her and her unborn child. Her journey takes her to Tokyo, where she battles the yakuza.
-             min
-          </div>
-        </div>
-        <div
-          class="result"
-        >
-          <div
-            class="number"
-          >
-            7
-             movies found
-          </div>
-          <div
-            class="sort"
-          >
-            <div
-              class="sortTitle"
-            >
-              SORT BY 
-            </div>
-            <input
-              class="js-toggle-radio-button"
-              id="sv1"
-              name="contact"
-              type="radio"
-              value="DATE"
-            />
-            <label
-              for="sv1"
-            >
-              DATE
-            </label>
-            <input
-              checked=""
-              class="js-toggle-radio-button"
-              id="sv2"
-              name="contact"
-              type="radio"
-              value="RATING"
-            />
-            <label
-              for="sv2"
-            >
-              RATING
-            </label>
-          </div>
-        </div>
-        <div
-          class="list"
-        >
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2002
-            </div>
-            <div
-              class="genre"
-            >
-              Drama, Thriller
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
+          5
         </div>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div>
-      <em>
-        details: 
-      </em>
+      <div>
+        Oscar winning
+      </div>
       <div
-        class="js-movie-details wrapper"
+        class="release"
       >
-        <img
-          class="poster"
-          src="media/51fY8NCyXpL._SX342_.jpg"
+        2000
+         
+      </div>
+      <div
+        class="runtime"
+      >
+        154
+         min
+      </div>
+      <div
+        class="overview"
+      >
+         American martial arts film written and directed by Quentin Tarantino. It stars Uma Thurman as the Bride, who swears revenge on a team of assassins (Lucy Liu, Michael Madsen, Daryl Hannah, and Vivica A. Fox) and their leader, Bill (David Carradine), after they try to kill her and her unborn child. Her journey takes her to Tokyo, where she battles the yakuza.
+         min
+      </div>
+    </div>
+    <div
+      class="result"
+    >
+      <div
+        class="number"
+      >
+        0
+         movies found
+      </div>
+      <div
+        class="sort"
+      >
+        <div
+          class="sortTitle"
+        >
+          SORT BY
+        </div>
+        <input
+          checked=""
+          class="js-toggle-radio-button"
+          id="sv1"
+          name="contact"
+          type="radio"
+          value="DATE"
         />
+        <label
+          for="sv1"
+        >
+          DATE
+        </label>
+        <input
+          class="js-toggle-radio-button"
+          id="sv2"
+          name="contact"
+          type="radio"
+          value="RATING"
+        />
+        <label
+          for="sv2"
+        >
+          RATING
+        </label>
+      </div>
+    </div>
+    <div
+      class="list"
+    >
+      <div
+        class="error"
+      >
+        No items found
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App should render first view 1`] = `
+<div>
+  <div>
+    <em>
+      details: 
+      React Test App, PartI
+    </em>
+    <form
+      class="js-search-form wrapper"
+    >
+      <div
+        class="row"
+      >
         <div
           class="title"
         >
-          Kill Bill
-                  
-          <div
-            class="rating"
-          >
-            5
-          </div>
+          FIND YOUR MOVIE
         </div>
-        <div>
-          Oscar winning
-        </div>
-        <div
-          class="release"
-        >
-          2000
-           
-        </div>
-        <div
-          class="runtime"
-        >
-          154
-           min
-        </div>
-        <div
-          class="overview"
-        >
-           American martial arts film written and directed by Quentin Tarantino. It stars Uma Thurman as the Bride, who swears revenge on a team of assassins (Lucy Liu, Michael Madsen, Daryl Hannah, and Vivica A. Fox) and their leader, Bill (David Carradine), after they try to kill her and her unborn child. Her journey takes her to Tokyo, where she battles the yakuza.
-           min
-        </div>
+        <input
+          class="js-search-input input"
+          type="text"
+          value=""
+        />
+        <input
+          class="submit"
+          type="submit"
+          value="SEARCH"
+        />
       </div>
       <div
-        class="result"
+        class="row"
       >
         <div
-          class="number"
+          class="filter"
         >
-          7
-           movies found
+          SEARCH BY 
+          TITLE
         </div>
-        <div
-          class="sort"
+        <input
+          checked=""
+          class="js-toggle-radio-button"
+          id="filterValue1"
+          name="contact"
+          type="radio"
+          value="TITLE"
+        />
+        <label
+          for="filterValue1"
         >
-          <div
-            class="sortTitle"
-          >
-            SORT BY 
-          </div>
-          <input
-            class="js-toggle-radio-button"
-            id="sv1"
-            name="contact"
-            type="radio"
-            value="DATE"
-          />
-          <label
-            for="sv1"
-          >
-            DATE
-          </label>
-          <input
-            checked=""
-            class="js-toggle-radio-button"
-            id="sv2"
-            name="contact"
-            type="radio"
-            value="RATING"
-          />
-          <label
-            for="sv2"
-          >
-            RATING
-          </label>
-        </div>
+          TITLE
+        </label>
+        <input
+          class="js-toggle-radio-button"
+          id="filterValue2"
+          name="contact"
+          type="radio"
+          value="GENRE"
+        />
+        <label
+          for="filterValue2"
+        >
+          GENRE
+        </label>
+      </div>
+    </form>
+    <div
+      class="result"
+    >
+      <div
+        class="number"
+      >
+        0
+         movies found
       </div>
       <div
-        class="list"
+        class="sort"
       >
         <div
-          class="js-movie-item movie"
+          class="sortTitle"
         >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
+          SORT BY
         </div>
-        <div
-          class="js-movie-item movie"
+        <input
+          checked=""
+          class="js-toggle-radio-button"
+          id="sv1"
+          name="contact"
+          type="radio"
+          value="DATE"
+        />
+        <label
+          for="sv1"
         >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2002
-          </div>
-          <div
-            class="genre"
-          >
-            Drama, Thriller
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
+          DATE
+        </label>
+        <input
+          class="js-toggle-radio-button"
+          id="sv2"
+          name="contact"
+          type="radio"
+          value="RATING"
+        />
+        <label
+          for="sv2"
         >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
+          RATING
+        </label>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`App should show new itemsList result/no_items_found) when new search value is submitted 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div>
-        <em>
-          details: 
-        </em>
-        <form
-          class="js-search-form wrapper"
-        >
-          <div
-            class="row"
-          >
-            <div
-              class="title"
-            >
-              FIND YOUR MOVIE
-            </div>
-            <input
-              class="js-search-input input"
-              type="text"
-              value="Quentin Tarantino"
-            />
-            <input
-              class="submit"
-              type="submit"
-              value="SEARCH"
-            />
-          </div>
-          <div
-            class="row"
-          >
-            <div
-              class="filter"
-            >
-              SEARCH BY 
-              TITLE
-            </div>
-            <input
-              checked=""
-              class="js-toggle-radio-button"
-              id="filterValue1"
-              name="contact"
-              type="radio"
-              value="TITLE"
-            />
-            <label
-              for="filterValue1"
-            >
-              TITLE
-            </label>
-            <input
-              class="js-toggle-radio-button"
-              id="filterValue2"
-              name="contact"
-              type="radio"
-              value="GENRE"
-            />
-            <label
-              for="filterValue2"
-            >
-              GENRE
-            </label>
-          </div>
-        </form>
-        <div
-          class="result"
-        >
-          <div
-            class="number"
-          >
-            7
-             movies found
-          </div>
-          <div
-            class="sort"
-          >
-            <div
-              class="sortTitle"
-            >
-              SORT BY 
-            </div>
-            <input
-              class="js-toggle-radio-button"
-              id="sv1"
-              name="contact"
-              type="radio"
-              value="DATE"
-            />
-            <label
-              for="sv1"
-            >
-              DATE
-            </label>
-            <input
-              checked=""
-              class="js-toggle-radio-button"
-              id="sv2"
-              name="contact"
-              type="radio"
-              value="RATING"
-            />
-            <label
-              for="sv2"
-            >
-              RATING
-            </label>
-          </div>
-        </div>
-        <div
-          class="list"
-        >
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2002
-            </div>
-            <div
-              class="genre"
-            >
-              Drama, Thriller
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-          <div
-            class="js-movie-item movie"
-          >
-            <a
-              href="#"
-            >
-              <img
-                class="poster"
-                src="media/51fY8NCyXpL._SX342_.jpg"
-              />
-            </a>
-            <div
-              class="title"
-            >
-              Kill Bill
-            </div>
-            <div
-              class="release"
-            >
-              2000
-            </div>
-            <div
-              class="genre"
-            >
-              Drama
-            </div>
-          </div>
-        </div>
+    <div
+      class="list"
+    >
+      <div
+        class="error"
+      >
+        No items found
       </div>
     </div>
-  </body>,
-  "container": <div>
-    <div>
-      <em>
-        details: 
-      </em>
-      <form
-        class="js-search-form wrapper"
-      >
-        <div
-          class="row"
-        >
-          <div
-            class="title"
-          >
-            FIND YOUR MOVIE
-          </div>
-          <input
-            class="js-search-input input"
-            type="text"
-            value="Quentin Tarantino"
-          />
-          <input
-            class="submit"
-            type="submit"
-            value="SEARCH"
-          />
-        </div>
-        <div
-          class="row"
-        >
-          <div
-            class="filter"
-          >
-            SEARCH BY 
-            TITLE
-          </div>
-          <input
-            checked=""
-            class="js-toggle-radio-button"
-            id="filterValue1"
-            name="contact"
-            type="radio"
-            value="TITLE"
-          />
-          <label
-            for="filterValue1"
-          >
-            TITLE
-          </label>
-          <input
-            class="js-toggle-radio-button"
-            id="filterValue2"
-            name="contact"
-            type="radio"
-            value="GENRE"
-          />
-          <label
-            for="filterValue2"
-          >
-            GENRE
-          </label>
-        </div>
-      </form>
-      <div
-        class="result"
-      >
-        <div
-          class="number"
-        >
-          7
-           movies found
-        </div>
-        <div
-          class="sort"
-        >
-          <div
-            class="sortTitle"
-          >
-            SORT BY 
-          </div>
-          <input
-            class="js-toggle-radio-button"
-            id="sv1"
-            name="contact"
-            type="radio"
-            value="DATE"
-          />
-          <label
-            for="sv1"
-          >
-            DATE
-          </label>
-          <input
-            checked=""
-            class="js-toggle-radio-button"
-            id="sv2"
-            name="contact"
-            type="radio"
-            value="RATING"
-          />
-          <label
-            for="sv2"
-          >
-            RATING
-          </label>
-        </div>
-      </div>
-      <div
-        class="list"
-      >
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2002
-          </div>
-          <div
-            class="genre"
-          >
-            Drama, Thriller
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-        <div
-          class="js-movie-item movie"
-        >
-          <a
-            href="#"
-          >
-            <img
-              class="poster"
-              src="media/51fY8NCyXpL._SX342_.jpg"
-            />
-          </a>
-          <div
-            class="title"
-          >
-            Kill Bill
-          </div>
-          <div
-            class="release"
-          >
-            2000
-          </div>
-          <div
-            class="genre"
-          >
-            Drama
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`App should show new itemsList result/no_items_found) when new search value is submitted 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div>
-        <em>
-          details: 
-        </em>
-        <form
-          class="js-search-form wrapper"
-        >
-          <div
-            class="row"
-          >
-            <div
-              class="title"
-            >
-              FIND YOUR MOVIE
-            </div>
-            <input
-              class="js-search-input input"
-              type="text"
-              value="depardieu"
-            />
-            <input
-              class="submit"
-              type="submit"
-              value="SEARCH"
-            />
-          </div>
-          <div
-            class="row"
-          >
-            <div
-              class="filter"
-            >
-              SEARCH BY 
-              TITLE
-            </div>
-            <input
-              checked=""
-              class="js-toggle-radio-button"
-              id="filterValue1"
-              name="contact"
-              type="radio"
-              value="TITLE"
-            />
-            <label
-              for="filterValue1"
-            >
-              TITLE
-            </label>
-            <input
-              class="js-toggle-radio-button"
-              id="filterValue2"
-              name="contact"
-              type="radio"
-              value="GENRE"
-            />
-            <label
-              for="filterValue2"
-            >
-              GENRE
-            </label>
-          </div>
-        </form>
-        <div
-          class="result"
-        >
-          <div
-            class="number"
-          >
-            0
-             movies found
-          </div>
-          <div
-            class="sort"
-          >
-            <div
-              class="sortTitle"
-            >
-              SORT BY 
-            </div>
-            <input
-              class="js-toggle-radio-button"
-              id="sv1"
-              name="contact"
-              type="radio"
-              value="DATE"
-            />
-            <label
-              for="sv1"
-            >
-              DATE
-            </label>
-            <input
-              checked=""
-              class="js-toggle-radio-button"
-              id="sv2"
-              name="contact"
-              type="radio"
-              value="RATING"
-            />
-            <label
-              for="sv2"
-            >
-              RATING
-            </label>
-          </div>
-        </div>
-        <div
-          class="list"
-        >
-          <div
-            class="error"
-          >
-            No items found
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div>
-      <em>
-        details: 
-      </em>
-      <form
-        class="js-search-form wrapper"
-      >
-        <div
-          class="row"
-        >
-          <div
-            class="title"
-          >
-            FIND YOUR MOVIE
-          </div>
-          <input
-            class="js-search-input input"
-            type="text"
-            value="depardieu"
-          />
-          <input
-            class="submit"
-            type="submit"
-            value="SEARCH"
-          />
-        </div>
-        <div
-          class="row"
-        >
-          <div
-            class="filter"
-          >
-            SEARCH BY 
-            TITLE
-          </div>
-          <input
-            checked=""
-            class="js-toggle-radio-button"
-            id="filterValue1"
-            name="contact"
-            type="radio"
-            value="TITLE"
-          />
-          <label
-            for="filterValue1"
-          >
-            TITLE
-          </label>
-          <input
-            class="js-toggle-radio-button"
-            id="filterValue2"
-            name="contact"
-            type="radio"
-            value="GENRE"
-          />
-          <label
-            for="filterValue2"
-          >
-            GENRE
-          </label>
-        </div>
-      </form>
-      <div
-        class="result"
-      >
-        <div
-          class="number"
-        >
-          0
-           movies found
-        </div>
-        <div
-          class="sort"
-        >
-          <div
-            class="sortTitle"
-          >
-            SORT BY 
-          </div>
-          <input
-            class="js-toggle-radio-button"
-            id="sv1"
-            name="contact"
-            type="radio"
-            value="DATE"
-          />
-          <label
-            for="sv1"
-          >
-            DATE
-          </label>
-          <input
-            checked=""
-            class="js-toggle-radio-button"
-            id="sv2"
-            name="contact"
-            type="radio"
-            value="RATING"
-          />
-          <label
-            for="sv2"
-          >
-            RATING
-          </label>
-        </div>
-      </div>
-      <div
-        class="list"
-      >
-        <div
-          class="error"
-        >
-          No items found
-        </div>
-      </div>
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
