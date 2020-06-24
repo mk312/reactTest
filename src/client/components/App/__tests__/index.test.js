@@ -6,22 +6,19 @@ import ReduxThunk from 'redux-thunk';
 import {Simulate} from 'react-dom/test-utils';
 import {render, fireEvent} from '@testing-library/react'
 import { moviesList } from './../../mockMoviesList';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
-
-const server = setupServer(
-    rest.get('*', (req, res, ctx) => {
-        return res(ctx.status(200), ctx.json({data: moviesList.data}))
-    }),
-);
-
 import App from '../index';
 
 let container = null;
 let store  = createStore(reducer, applyMiddleware(ReduxThunk));
 describe('App', () => {
-    beforeAll(() => server.listen());
-    afterAll(() => server.close());
+    beforeAll(() => {
+        const mockSuccessResponse = {data: moviesList.data };
+        global.fetch = jest.fn(() =>
+            Promise.resolve({
+                json: () => Promise.resolve(mockSuccessResponse),
+            })
+        );
+    });
     beforeEach(() => {
         store = createStore(reducer, applyMiddleware(ReduxThunk));
         container = render(
@@ -31,21 +28,34 @@ describe('App', () => {
         ).container;
     });
 
-    it('should render first view',  ()  => {
+    it('should show movieDetails when movieItem is clicked()', () => {
+        const button = document.querySelector('.js-movie-item a');
+        fireEvent.click(
+            button, new Event('click')
+        );
+
+        expect(document.querySelectorAll('.js-movie-details').length).toBe(1);
+        // re-check with snapshot
         expect(container).toMatchSnapshot();
     });
 
-    it('should dispatch SHOW_MOVIE and show one particular movie', ()  => {
-        store.dispatch({type: 'SHOW_MOVIE', chosenMovie: moviesList.data[0]});
-        expect(store.getState().chosenMovie).toBe( moviesList.data[0]);
-        expect(container).toMatchSnapshot();
-    });
-
-    it('should show new itemsList result/no_items_found) when search is submitted', () => {
+    it('should show itemsList result when new search value is submitted', () => {
+        const searchInput = document.querySelector('.js-search-input');
         const searchForm = document.querySelector('.js-search-form');
-        fireEvent.submit( searchForm );
-        expect(store.getState().moviesList).toBe(moviesList.data);
-        // expect(store.getState().moviesList).toStrictEqual( []);
-        // expect(container).toMatchSnapshot();
+        const searchValues = [
+            'Quentin Tarantino',
+            'noMatchesRequest'
+        ]
+        searchValues.forEach((searcString)=>{
+            fireEvent.change(searchInput, { target: { value: searcString}});
+            fireEvent.submit(
+                searchForm
+            );
+            const moviesNumber = document.querySelectorAll('.js-movie-item').length;
+
+            expect(moviesNumber).toBe(moviesList.data.length);
+            // re-check with snapshot
+            expect(container).toMatchSnapshot();
+        })
     });
 });

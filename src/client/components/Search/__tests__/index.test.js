@@ -1,14 +1,33 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { reducer } from './../../../reducers/reducer';
+import ReduxThunk from 'redux-thunk';
 import {Simulate} from 'react-dom/test-utils';
 import {render} from '@testing-library/react'
 
 import Search from '../index';
+import { moviesList } from './../../mockMoviesList';
 
 let container = null;
+let store  = createStore(reducer, applyMiddleware(ReduxThunk));
 
 describe('App', () => {
+    beforeAll(() => {
+        const mockSuccessResponse = {data: moviesList.data };
+        global.fetch = jest.fn(() =>
+            Promise.resolve({
+                json: () => Promise.resolve(mockSuccessResponse),
+            })
+        );
+    });
     beforeEach(() => {
-        container = render(<Search />);
+        store = createStore(reducer, applyMiddleware(ReduxThunk));
+        container = render(
+            <Provider store={store}>
+                <Search />
+            </Provider>
+        ).container;
     });
     it('should toggle between Genre/Title when one of them is clicked', () => {
         const radio = [
