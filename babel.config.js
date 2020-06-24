@@ -5,8 +5,12 @@ module.exports = function (api) {
         "@babel/preset-env",
         "@babel/preset-react",
     ];
+    const plugins = [
+        ["@babel/transform-runtime"]
+    ]
 
     return {
-        presets
+        presets,
+        plugins
     };
 }

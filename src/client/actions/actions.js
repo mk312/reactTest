@@ -1,5 +1,3 @@
-import fetch from 'cross-fetch';
-
 export const UPDATE_MOVIES_ARR = 'UPDATE_MOVIES_ARR';
 export const INCREASE_MOVIES_ARR = 'INCREASE_MOVIES_ARR';
 export function requestMoviesArr(searchParams) {

@@ -16,16 +16,12 @@ let Element = function Element() {
 };
 
 describe('ErorBoundary', () => {
-    beforeEach(() => {
-        container = render(<ErorBoundary><BrokenElement/></ErorBoundary>);
-    });
-
     it('should show Error notification for user', () => {
-        container = render(<ErorBoundary><BrokenElement/></ErorBoundary>);
+        container = render(<ErorBoundary><BrokenElement/></ErorBoundary>).container;
         expect(container).toMatchSnapshot();
     });
     it('should not show anything', () => {
-        container = render(<ErorBoundary><Element/></ErorBoundary>);
+        container = render(<ErorBoundary><Element/></ErorBoundary>).container;
         expect(container).toMatchSnapshot();
     });
 });

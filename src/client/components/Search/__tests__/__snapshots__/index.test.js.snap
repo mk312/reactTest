@@ -1,359 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should toggle between Genre/Title when one of them is clicked 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <form
-        class="js-search-form wrapper"
-      >
-        <div
-          class="row"
-        >
-          <div
-            class="title"
-          >
-            FIND YOUR MOVIE
-          </div>
-          <input
-            class="js-search-input input"
-            type="text"
-            value="Quentin Tarantino"
-          />
-          <input
-            class="submit"
-            type="submit"
-            value="SEARCH"
-          />
-        </div>
-        <div
-          class="row"
-        >
-          <div
-            class="filter"
-          >
-            SEARCH BY 
-            TITLE
-          </div>
-          <input
-            checked=""
-            class="js-toggle-radio-button"
-            id="filterValue1"
-            name="contact"
-            type="radio"
-            value="TITLE"
-          />
-          <label
-            for="filterValue1"
-          >
-            TITLE
-          </label>
-          <input
-            class="js-toggle-radio-button"
-            id="filterValue2"
-            name="contact"
-            type="radio"
-            value="GENRE"
-          />
-          <label
-            for="filterValue2"
-          >
-            GENRE
-          </label>
-        </div>
-      </form>
-    </div>
-  </body>,
-  "container": <div>
-    <form
-      class="js-search-form wrapper"
+<div>
+  <form
+    class="js-search-form wrapper"
+  >
+    <div
+      class="row"
     >
       <div
-        class="row"
+        class="title"
       >
-        <div
-          class="title"
-        >
-          FIND YOUR MOVIE
-        </div>
-        <input
-          class="js-search-input input"
-          type="text"
-          value="Quentin Tarantino"
-        />
-        <input
-          class="submit"
-          type="submit"
-          value="SEARCH"
-        />
+        FIND YOUR MOVIE
       </div>
+      <input
+        class="js-search-input input"
+        type="text"
+        value=""
+      />
+      <input
+        class="submit"
+        type="submit"
+        value="SEARCH"
+      />
+    </div>
+    <div
+      class="row"
+    >
       <div
-        class="row"
+        class="filter"
       >
-        <div
-          class="filter"
-        >
-          SEARCH BY 
-          TITLE
-        </div>
-        <input
-          checked=""
-          class="js-toggle-radio-button"
-          id="filterValue1"
-          name="contact"
-          type="radio"
-          value="TITLE"
-        />
-        <label
-          for="filterValue1"
-        >
-          TITLE
-        </label>
-        <input
-          class="js-toggle-radio-button"
-          id="filterValue2"
-          name="contact"
-          type="radio"
-          value="GENRE"
-        />
-        <label
-          for="filterValue2"
-        >
-          GENRE
-        </label>
+        SEARCH BY 
+        TITLE
       </div>
-    </form>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+      <input
+        checked=""
+        class="js-toggle-radio-button"
+        id="filterValue1"
+        name="contact"
+        type="radio"
+        value="TITLE"
+      />
+      <label
+        for="filterValue1"
+      >
+        TITLE
+      </label>
+      <input
+        class="js-toggle-radio-button"
+        id="filterValue2"
+        name="contact"
+        type="radio"
+        value="GENRE"
+      />
+      <label
+        for="filterValue2"
+      >
+        GENRE
+      </label>
+    </div>
+  </form>
+</div>
 `;
 
 exports[`App should toggle between Genre/Title when one of them is clicked 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <form
-        class="js-search-form wrapper"
-      >
-        <div
-          class="row"
-        >
-          <div
-            class="title"
-          >
-            FIND YOUR MOVIE
-          </div>
-          <input
-            class="js-search-input input"
-            type="text"
-            value="Quentin Tarantino"
-          />
-          <input
-            class="submit"
-            type="submit"
-            value="SEARCH"
-          />
-        </div>
-        <div
-          class="row"
-        >
-          <div
-            class="filter"
-          >
-            SEARCH BY 
-            GENRE
-          </div>
-          <input
-            class="js-toggle-radio-button"
-            id="filterValue1"
-            name="contact"
-            type="radio"
-            value="TITLE"
-          />
-          <label
-            for="filterValue1"
-          >
-            TITLE
-          </label>
-          <input
-            checked=""
-            class="js-toggle-radio-button"
-            id="filterValue2"
-            name="contact"
-            type="radio"
-            value="GENRE"
-          />
-          <label
-            for="filterValue2"
-          >
-            GENRE
-          </label>
-        </div>
-      </form>
-    </div>
-  </body>,
-  "container": <div>
-    <form
-      class="js-search-form wrapper"
+<div>
+  <form
+    class="js-search-form wrapper"
+  >
+    <div
+      class="row"
     >
       <div
-        class="row"
+        class="title"
       >
-        <div
-          class="title"
-        >
-          FIND YOUR MOVIE
-        </div>
-        <input
-          class="js-search-input input"
-          type="text"
-          value="Quentin Tarantino"
-        />
-        <input
-          class="submit"
-          type="submit"
-          value="SEARCH"
-        />
+        FIND YOUR MOVIE
       </div>
+      <input
+        class="js-search-input input"
+        type="text"
+        value=""
+      />
+      <input
+        class="submit"
+        type="submit"
+        value="SEARCH"
+      />
+    </div>
+    <div
+      class="row"
+    >
       <div
-        class="row"
+        class="filter"
       >
-        <div
-          class="filter"
-        >
-          SEARCH BY 
-          GENRE
-        </div>
-        <input
-          class="js-toggle-radio-button"
-          id="filterValue1"
-          name="contact"
-          type="radio"
-          value="TITLE"
-        />
-        <label
-          for="filterValue1"
-        >
-          TITLE
-        </label>
-        <input
-          checked=""
-          class="js-toggle-radio-button"
-          id="filterValue2"
-          name="contact"
-          type="radio"
-          value="GENRE"
-        />
-        <label
-          for="filterValue2"
-        >
-          GENRE
-        </label>
+        SEARCH BY 
+        GENRE
       </div>
-    </form>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+      <input
+        class="js-toggle-radio-button"
+        id="filterValue1"
+        name="contact"
+        type="radio"
+        value="TITLE"
+      />
+      <label
+        for="filterValue1"
+      >
+        TITLE
+      </label>
+      <input
+        checked=""
+        class="js-toggle-radio-button"
+        id="filterValue2"
+        name="contact"
+        type="radio"
+        value="GENRE"
+      />
+      <label
+        for="filterValue2"
+      >
+        GENRE
+      </label>
+    </div>
+  </form>
+</div>
 `;
