@@ -1,4 +1,4 @@
-export const  moviesList = {data:[
+export const  moviesList = [
     {
       id: 1,
       title: "Kill Bill",
@@ -112,4 +112,4 @@ export const  moviesList = {data:[
         "Drama"
       ]
     },
-]};
+];
