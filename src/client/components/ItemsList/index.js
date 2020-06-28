@@ -19,7 +19,7 @@ class ItemsList extends PureComponent {
             if(document.body.offsetHeight < window.innerHeight + document.body.scrollTop + 1) {
                 let newOffset = this.props.searchParams.offset +1;
                 this.props.onUpdateMoviesPage(newOffset);
-                this.props.onRequestMoviesArr({...this.props.searchParams, offset: newOffset});
+                this.props.onRequestMoviesArr({...this.props.searchParams, offset: newOffset}, this.props.choosenMovie);
             }
         }
     }
@@ -33,14 +33,20 @@ class ItemsList extends PureComponent {
         return (
             <React.Fragment>
                 <div className={styles.result}>
-                    <div className={styles.number}>{this.props.moviesList.length || 0} movies found</div>
-                    <div className={styles.sort}>
-                        <div className={styles.sortTitle}>SORT BY</div>
+                    { this.props.chosenMovie ? (
+                            <div className={styles.number}>Films by {this.props.chosenMovie.genres.join(', ')} genre</div>
+                        ):
+                        (<React.Fragment>
+                            <div className={styles.number}>{this.props.moviesList.length || 0} movies found</div>
+                            <div className={styles.sort}>
+                                <div className={styles.sortTitle}>SORT BY</div>
 
-                        <Toggle handleFilterChange={this.handleSortingChange}
-                                filterValue={this.props.searchParams.sortBy}
-                                values={[{value: 'DATE', id: 'sv1'}, {value: 'RATING', id: 'sv2'}]} />
-                    </div>
+                                <Toggle handleFilterChange={this.handleSortingChange}
+                                        filterValue={this.props.searchParams.sortBy}
+                                        values={[{value: 'DATE', id: 'sv1'}, {value: 'RATING', id: 'sv2'}]} />
+                            </div>
+                        </React.Fragment>)
+                    }
                 </div>
 
                 <div className={styles.list}>
@@ -69,13 +75,14 @@ export default connect(
         return {
             moviesList: state.moviesList,
             searchParams: state.searchParams,
+            chosenMovie: state.chosenMovie,
         };
     },
     (dispatch) => {
         return {
             onUpdateSorting: (sortBy) => dispatch(updateSorting(sortBy)),
             onUpdateMoviesPage: (offset) => dispatch(updateMoviesPage(offset)),
-            onRequestMoviesArr: (searchParams) => dispatch(requestMoviesArr(searchParams)),
+            onRequestMoviesArr: (searchParams, choosenMovie) => dispatch(requestMoviesArr(searchParams, choosenMovie)),
         }
     },
 )(ItemsList);

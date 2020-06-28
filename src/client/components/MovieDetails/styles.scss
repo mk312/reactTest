@@ -36,3 +36,39 @@
   margin: 21px 21px 21px 0;
   color: #f65261;
 }
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  padding: 10px;
+  color: transparent;
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 23px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #f65261;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover{
+    &:before,
+    &:after {
+      background-color: #f21226;
+      width: 4px;
+    }
+  }
+}

@@ -7,5 +7,6 @@ export const initialState = {
         filterBy: 'TITLE',
         sortBy: 'DATE',
         offset: null,
+        searchGenres: null,
     }
 }

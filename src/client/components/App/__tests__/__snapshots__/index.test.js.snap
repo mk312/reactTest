@@ -360,7 +360,6 @@ exports[`App should show movieDetails when movieItem is clicked() 1`] = `
         class="title"
       >
         Kill Bill-1
-                
         <div
           class="rating"
         >
@@ -388,6 +387,10 @@ exports[`App should show movieDetails when movieItem is clicked() 1`] = `
          American martial arts film written and directed by Quentin Tarantino. It stars Uma Thurman as the Bride, who swears revenge on a team of assassins (Lucy Liu, Michael Madsen, Daryl Hannah, and Vivica A. Fox) and their leader, Bill (David Carradine), after they try to kill her and her unborn child. Her journey takes her to Tokyo, where she battles the yakuza.
          min
       </div>
+      <a
+        class="close"
+        href="#"
+      />
     </div>
     <div
       class="result"
@@ -395,42 +398,9 @@ exports[`App should show movieDetails when movieItem is clicked() 1`] = `
       <div
         class="number"
       >
-        2
-         movies found
-      </div>
-      <div
-        class="sort"
-      >
-        <div
-          class="sortTitle"
-        >
-          SORT BY
-        </div>
-        <input
-          checked=""
-          class="js-toggle-radio-button"
-          id="sv1"
-          name="contact"
-          type="radio"
-          value="DATE"
-        />
-        <label
-          for="sv1"
-        >
-          DATE
-        </label>
-        <input
-          class="js-toggle-radio-button"
-          id="sv2"
-          name="contact"
-          type="radio"
-          value="RATING"
-        />
-        <label
-          for="sv2"
-        >
-          RATING
-        </label>
+        Films by 
+        Drama
+         genre
       </div>
     </div>
     <div
