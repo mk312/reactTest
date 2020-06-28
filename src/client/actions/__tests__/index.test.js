@@ -8,7 +8,9 @@ const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
 const testString = 'testString';
 let testSearchParams = initialState.searchParams;
+let testMovieItem = moviesList.data[0];
 let store;
+
 describe('actions', () => {
     beforeEach(() => {
         const mockSuccessResponse = {data: moviesList.data };
@@ -45,9 +47,15 @@ describe('actions', () => {
     });
 
     it('should perform showMovie', () => {
-        const expectedActions = [{ type: actions.SHOW_MOVIE, chosenMovie: testString}]
-        store.dispatch(actions.showMovie(testString));
-        expect(store.getActions()).toEqual(expectedActions)
+        store.dispatch(actions.showMovie(testMovieItem)).then(() => {
+            expect(store.getState().chosenMovie).toEqual(testMovieItem);
+        })
+    });
+
+    it('should perform hideMovieDetails', () => {
+        store.dispatch(actions.hideMovieDetails(initialState.searchParams)).then(() => {
+            expect(store.getState().chosenMovie).toEqual(null);
+        })
     });
 
     it('should perform requestMoviesArr and update', done => {

@@ -6,7 +6,8 @@ import {
     UPDATE_FILTER,
     UPDATE_SORTING,
     UPDATE_MOVIES_PAGE,
-    SHOW_MOVIE
+    SHOW_MOVIE,
+    UPDATE_MOVIES_DETAILS_SEARCH_PARAM
 } from '../actions/actions'
 
 export function reducer (state = initialState, action ) {
@@ -43,6 +44,14 @@ export function reducer (state = initialState, action ) {
                 },
             };
 
+        case UPDATE_MOVIES_DETAILS_SEARCH_PARAM:
+            return {
+                ...state,
+                searchParams : {
+                    ...state.searchParams,
+                    searchGenres: action.searchGenres
+                },
+            };
         case UPDATE_SORTING:
             return {
                 ...state,

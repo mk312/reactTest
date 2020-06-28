@@ -2,7 +2,7 @@ describe('App', () => {
     beforeEach(() => {
         cy.visit('/')
     });
-    const defaultInputValue = "Quentin Tarantino";
+    const defaultInputValue = "w";
 
     it('change movies list to NoItems if search result is empty', () => {
         cy.get('.js-search-input')
@@ -11,13 +11,13 @@ describe('App', () => {
             .get('.js-movie-item')
             .should('have.length', 0);
     });
-    it('show movies list if search result is Quentin Tarantino', () => {
+    it('show movies list if search result is w', () => {
         cy.get('.js-search-input')
             .clear()
             .type(defaultInputValue)
             .type('{enter}')
             .get('.js-movie-item')
-            .should('have.length', 7);
+            .should('have.length', 15);
     });
     it('show one movie detailes and hide search when item from movie list is clicked', () => {
         cy.get('.js-movie-item a')
