@@ -1,4 +1,4 @@
-Test React project, Part II
+Test React project, Part VI
 (components and tests can be found at src/client/components)
 
 
@@ -21,3 +21,10 @@ USEFUL COMMANDS:
 - npm run start-prod-server (nodemon server for prod build)
 - npm run test
 - npm run e2e-test
+
+NOTE:
+Following pages for dev build are assumed to be supported:
+http://localhost:9000
+http://localhost:9000/search/w   (where 'w' is a search string)
+http://localhost:9000/movie/397567   (where '397567' is an id of the movie)
+http://localhost:9000/404   (all other urls redirect to 404 page)

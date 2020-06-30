@@ -17,6 +17,7 @@ const config = {
         compress: true,
         port: 9000,
         contentBase: BUILD_DIR,
+        historyApiFallback: true,
     },
     devtool: !isProd && 'inline-source-map',
     output: {
