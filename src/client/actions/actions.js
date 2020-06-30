@@ -83,3 +83,12 @@ export function hideMovieDetails(searchParams) {
         })();
     }
 }
+export function requestMovie(id) {
+    return dispatch =>{
+        return (async () => {
+            const response = await fetch('https://reactjs-cdp.herokuapp.com/movies' + '/' + id);
+            const res = await response.json();
+            dispatch({type: SHOW_MOVIE, chosenMovie: res});
+        })();
+    }
+}

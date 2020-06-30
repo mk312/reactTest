@@ -3,7 +3,8 @@ import styles from './styles.scss';
 import React, { PureComponent } from 'react';
 import '@babel/polyfill';
 import { connect } from 'react-redux';
-import {updateSorting, requestMoviesArr, updateMoviesPage} from '../../actions/actions';
+import { Link } from "react-router-dom";
+import { updateSorting, requestMoviesArr, updateMoviesPage } from '../../actions/actions';
 
 import Toggle from '../basic/Toggle/';
 
@@ -52,9 +53,9 @@ class ItemsList extends PureComponent {
                 <div className={styles.list}>
                     {this.props.moviesList.map((movie) => (
                         <div key={movie.id} className={`js-movie-item ${styles.movie}`}>
-                            <a href='#' onClick={() => this.props.handleMovieClick(movie.id)}>
+                            <Link to={'/movie/'+ movie.id} onClick={() => this.props.handleMovieClick(movie.id)}>
                                 <img className={styles.poster} src={movie.poster_path}/>
-                            </a>
+                            </Link>
                             <div className={styles.title}>{movie.title}</div>
                             <div className={styles.release}>{movie.release_date}</div>
                             <div className={styles.genre}>{movie.genres.join(', ')}</div>

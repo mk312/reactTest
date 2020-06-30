@@ -4,6 +4,7 @@ import styles from './styles.scss';
 import React, { PureComponent } from 'react';
 import '@babel/polyfill';
 import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
 import {updateSearchWord, updateFilter, requestMoviesArr, updateMoviesPage} from '../../actions/actions';
 
 import Toggle from '../basic/Toggle/';
@@ -22,7 +23,20 @@ class Search extends PureComponent {
             event.preventDefault();
             this.props.onUpdateMoviesPage(0);
             this.props.onRequestMoviesArr({...this.props.searchParams, offset: 0});
+            const newUrl = '/' + (this.props.searchParams.searchWord ? 'search/' + this.props.searchParams.searchWord : '');
+            this.props.history.push({
+                pathname: newUrl,
+            })
         };
+    }
+
+    componentDidMount() {
+        const { searchValue } = this.props;
+        if(searchValue) {
+            this.props.onUpdateMoviesPage(0);
+            this.props.onUpdateSearchWord(searchValue);
+            this.props.onRequestMoviesArr({...this.props.searchParams, searchWord: searchValue, offset: 0} );
+        }
     }
 
     render() {
@@ -45,7 +59,7 @@ class Search extends PureComponent {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     (state) => {
         return {
             searchParams: state.searchParams,
@@ -59,4 +73,4 @@ export default connect(
             onRequestMoviesArr: (searchParams) => dispatch(requestMoviesArr(searchParams)),
         }
     },
-)(Search);
+)(Search));
