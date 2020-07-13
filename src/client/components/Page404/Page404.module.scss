@@ -1,0 +1,28 @@
+.wrapper {
+  padding: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.text {
+  flex-basis: 100%;
+  text-align: center;
+}
+.link {
+  margin: 40px;
+  border-radius: 3px;
+  background-color: #f65261;
+  opacity: 1;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  font-size: 13px;
+  color: #ffffff;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #f21226;
+  }
+}

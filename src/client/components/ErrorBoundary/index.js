@@ -1,4 +1,4 @@
-import styles from './styles.scss';
+import styles from './ErrorBoundary.module.scss';
 
 import React, { Component } from 'react';
 

@@ -1,9 +1,9 @@
-import styles from './styles.scss';
+import styles from './ItemsList.module.scss';
 
 import React, { PureComponent } from 'react';
 import '@babel/polyfill';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
+import Link from 'next/link'
 import { updateSorting, requestMoviesArr, updateMoviesPage } from '../../actions/actions';
 
 import Toggle from '../basic/Toggle/';
@@ -25,9 +25,11 @@ class ItemsList extends PureComponent {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.onRequestMoviesArr(this.props.searchParams);
-        window.addEventListener('scroll', this.handleScroll);
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll, false);
     }
 
     render() {
@@ -35,7 +37,7 @@ class ItemsList extends PureComponent {
             <React.Fragment>
                 <div className={styles.result}>
                     { this.props.chosenMovie ? (
-                            <div className={styles.number}>Films by {this.props.chosenMovie.genres.join(', ')} genre</div>
+                            <div className={styles.number}>Films by {this.props.chosenMovie.genres ? this.props.chosenMovie.genres.join(', ') : ''} genre</div>
                         ):
                         (<React.Fragment>
                             <div className={styles.number}>{this.props.moviesList.length || 0} movies found</div>
@@ -53,8 +55,10 @@ class ItemsList extends PureComponent {
                 <div className={styles.list}>
                     {this.props.moviesList.map((movie) => (
                         <div key={movie.id} className={`js-movie-item ${styles.movie}`}>
-                            <Link to={'/movie/'+ movie.id} onClick={() => this.props.handleMovieClick(movie.id)}>
-                                <img className={styles.poster} src={movie.poster_path}/>
+                            <Link href={'/movie/'+ movie.id}>
+                               <a>
+                                   <img  onClick={() => this.props.handleMovieClick(movie.id)} className={styles.poster} src={movie.poster_path}/>
+                               </a>
                             </Link>
                             <div className={styles.title}>{movie.title}</div>
                             <div className={styles.release}>{movie.release_date}</div>
