@@ -1,8 +1,7 @@
-import styles from './styles.scss';
+import styles from './MovieDetails.module.scss';
 import React, { PureComponent } from 'react';
 import '@babel/polyfill';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
 import { hideMovieDetails, requestMovie } from '../../actions/actions';
 
 class MovieDetails extends PureComponent {
@@ -12,7 +11,7 @@ class MovieDetails extends PureComponent {
             this.props.onHideMovie(this.props.searchParams);
         };
     }
-    componentDidMount() {
+    componentWillMount() {
         const { id, chosenMovie } = this.props;
         if(!chosenMovie || !(chosenMovie.id == id)) {
             this.props.onRequestMovie(id);
@@ -32,8 +31,7 @@ class MovieDetails extends PureComponent {
                         <div className={styles.release}>{this.props.chosenMovie.release_date} </div>
                         <div className={styles.runtime}>{this.props.chosenMovie.runtime} min</div>
                         <div className={styles.overview}>{this.props.chosenMovie.overview} min</div>
-                        <Link  to={'/'} onClick={() => this.handleCloseClick()}
-                               className={styles.close}/>
+                        <a href="/" className={styles.close} onClick={() => this.handleCloseClick()}>x</a>
                     </React.Fragment> : null
                 }
                 </div>
