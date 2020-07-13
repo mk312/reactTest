@@ -11,10 +11,16 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background: url("/search_bg.jpg");
+    background-image: url('/search_bg.jpg');
     background-size: cover;
     filter: brightness(0.35) contrast(0.65) blur(1px);
   }
+}
+
+.row {
+  display: flex;
+  margin-bottom: 40px;
+  align-items: baseline;
 }
 
 .title {

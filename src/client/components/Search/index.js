@@ -1,5 +1,4 @@
-import img from './search_bg.jpg';
-import styles from './styles.scss';
+import styles from './Search.module.scss';
 
 import React, { PureComponent } from 'react';
 import '@babel/polyfill';
@@ -30,7 +29,7 @@ class Search extends PureComponent {
         };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const { searchValue } = this.props;
         if(searchValue) {
             this.props.onUpdateMoviesPage(0);
@@ -42,13 +41,13 @@ class Search extends PureComponent {
     render() {
         return (
            <form className={`js-search-form ${styles.wrapper}`} onSubmit={this.handleSubmit}>
-               <div className={'row'}>
+               <div className={styles.row}>
                    <div className={styles.title}>FIND YOUR MOVIE</div>
                    <input className={`js-search-input ${styles.input}`} type="text" value={this.props.searchParams.searchWord} onChange={this.handleSearchChange} />
                    <input className={styles.submit} type="submit" value="SEARCH"/>
                </div>
 
-               <div className={'row'}>
+               <div className={styles.row}>
                    <div className={styles.filter}>SEARCH BY {this.props.searchParams.filterBy}</div>
                    <Toggle handleFilterChange={this.handleFilterChange}
                            filterValue={this.props.searchParams.filterBy}
