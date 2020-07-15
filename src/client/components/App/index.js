@@ -1,89 +1,86 @@
 import React, { Component } from 'react';
 import '@babel/polyfill';
-import { moviesList } from './../mockMoviesList';
 import { connect } from 'react-redux';
-import {BrowserRouter as Router, Switch, Route, useParams, Redirect } from "react-router-dom";
-import {showMovie} from '../../actions/actions';
+import {
+  BrowserRouter as Router, Switch, Route, useParams, Redirect,
+} from 'react-router-dom';
+import { showMovie } from '../../actions/actions';
 
-import ErrorBoundary from '../ErrorBoundary/';
-import Search from '../Search/';
-import ItemsList from '../ItemsList/';
-import MovieDetails from '../MovieDetails/';
-import Page404 from '../Page404/';
+import ErrorBoundary from '../ErrorBoundary';
+import Search from '../Search';
+import ItemsList from '../ItemsList';
+import MovieDetails from '../MovieDetails';
+import Page404 from '../Page404';
 
 const GetIdMovieDetails = (props) => {
-    const {id} = useParams();
-    return (
-        <MovieDetails movie={props.movie} id={id}/>
-    );
+  const { id } = useParams();
+  return (
+    <MovieDetails movie={props.movie} id={id}/>
+  );
 };
 const GetValSearch = (props) => {
-    const {searchValue} = useParams();
-    return (
-        <Search searchValue={searchValue}/>
-    );
+  const { searchValue } = useParams();
+  return (
+    <Search searchValue={searchValue}/>
+  );
 };
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.handleMovieClick = (id) => {
-            window.scrollTo(0, 0);
-            let clickedMovie = this.props.moviesList.find((movieItem) => id == movieItem.id);
-            this.props.onShowMovie(clickedMovie);
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.handleMovieClick = (id) => {
+      window.scrollTo(0, 0);
+      const clickedMovie = this.props.moviesList.find((movieItem) => id === movieItem.id);
+      this.props.onShowMovie(clickedMovie);
+    };
+  }
 
-    render() {
-        return (
-            <Router>
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route path="/404">
+            <Page404/>
+          </Route>
+
+          <Route path="*">
+            <div>
+              <em>details: {this.props.info}</em>
+              <ErrorBoundary>
                 <Switch>
-                    <Route path="/404">
-                        <Page404/>
-                    </Route>
-
-                    <Route path="*">
-                        <div>
-                            <em>details: {this.props.info}</em>
-                            <ErrorBoundary>
-                                <Switch>
-                                    <Route exact path="/">
-                                        <GetValSearch/>
-                                    </Route>
-                                    <Route path="/search/:searchValue">
-                                        <GetValSearch/>
-                                    </Route>
-                                    <Route path="/movie/:id">
-                                        <GetIdMovieDetails movie={this.props.moviesList[0]} />
-                                    </Route>
-                                    <Route path="*">
-                                        <Redirect to="/404" />
-                                    </Route>
-                                </Switch>
-                            </ErrorBoundary>
-
-                            <ErrorBoundary>
-                                <ItemsList
-                                    handleMovieClick={this.handleMovieClick}/>
-                            </ErrorBoundary>
-                        </div>
-                    </Route>
+                  <Route exact path="/">
+                    <GetValSearch/>
+                  </Route>
+                  <Route path="/search/:searchValue">
+                    <GetValSearch/>
+                  </Route>
+                  <Route path="/movie/:id">
+                    <GetIdMovieDetails movie={this.props.moviesList[0]} />
+                  </Route>
+                  <Route path="*">
+                    <Redirect to="/404" />
+                  </Route>
                 </Switch>
-            </Router>
-        );
-    }
+              </ErrorBoundary>
+
+              <ErrorBoundary>
+                <ItemsList
+                  handleMovieClick={this.handleMovieClick}/>
+              </ErrorBoundary>
+            </div>
+          </Route>
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default connect(
-    (state) => {
-        return {
-            moviesList: state.moviesList,
-            chosenMovie: state.chosenMovie,
-        };
-    },
-    (dispatch) => {
-        return {
-            onShowMovie: (clickedMovie) => dispatch(showMovie(clickedMovie)),
-        }
-    },
+  (state) => ({
+    moviesList: state.moviesList,
+    chosenMovie: state.chosenMovie,
+  }),
+  (dispatch) => ({
+    onShowMovie: (clickedMovie) => dispatch(showMovie(clickedMovie)),
+  }),
 )(App);
