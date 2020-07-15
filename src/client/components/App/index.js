@@ -16,7 +16,25 @@ import { withRouter  } from 'next/router';
 const GetIdMovieDetails = (props) => {
     const {id} = useParams();
     return (
-        <MovieDetails movie={props.movie} id={id}/>
+        <MovieDetails movie={props.movie}
+                      id={id}
+                      fetchedMovie={props.fetchedMovie}/>
+    );
+};
+const FetchedMovieDetails = (props) => {
+    const {id} = useParams();
+    return (
+        <MovieDetails movie={props.movie}
+                      id={id}
+                      fetchedMovie={props.fetchedMovie}/>
+    );
+};
+const FetchedItemsList = (props) => {
+    const {id} = useParams();
+    return (
+        <ItemsList
+            handleMovieClick={props.handleMovieClick}
+            fetchedMovieList={ props.fetchedMovieList}/>
     );
 };
 
@@ -57,14 +75,10 @@ class App extends Component {
                                     <Route path="/search/:searchValue">
                                         <GetValSearch/>
                                     </Route>
-                                     <Route path="/search">
-                                        <Search searchValue={this.props.searchValue}/>
-                                    </Route>
                                     <Route path="/movie/:id">
-                                        <GetIdMovieDetails movie={this.props.moviesList[0]} />
-                                    </Route>
-                                    <Route path="/movie">
-                                        <MovieDetails id={this.props.id}/>
+                                        <GetIdMovieDetails
+                                            movie={this.props.moviesList[0]}
+                                            fetchedMovie={ this.props.fetchedMovie} />
                                     </Route>
                                     <Route path="*">
                                         <Redirect to="/404" />
@@ -73,8 +87,10 @@ class App extends Component {
                             </ErrorBoundary>
 
                             <ErrorBoundary>
-                                <ItemsList
-                                    handleMovieClick={this.handleMovieClick}/>
+                                <FetchedItemsList
+                                    handleMovieClick={this.handleMovieClick}
+                                    fetchedMovieList={ this.props.fetchedMovieList}
+                                />
                             </ErrorBoundary>
                         </div>
                     </Route>

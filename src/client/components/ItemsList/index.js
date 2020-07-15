@@ -25,11 +25,9 @@ class ItemsList extends PureComponent {
         }
     }
 
-    componentWillMount() {
-        this.props.onRequestMoviesArr(this.props.searchParams);
-    }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll, false);
+        this.props.onRequestMoviesArr(this.props.searchParams);
     }
 
     render() {
@@ -53,7 +51,19 @@ class ItemsList extends PureComponent {
                 </div>
 
                 <div className={styles.list}>
-                    {this.props.moviesList.map((movie) => (
+                    {!this.props.fetchedMovieList && this.props.moviesList && this.props.moviesList.map((movie) => (
+                        <div key={movie.id} className={`js-movie-item ${styles.movie}`}>
+                            <Link href={'/movie/'+ movie.id}>
+                               <a>
+                                   <img  onClick={() => this.props.handleMovieClick(movie.id)} className={styles.poster} src={movie.poster_path}/>
+                               </a>
+                            </Link>
+                            <div className={styles.title}>{movie.title}</div>
+                            <div className={styles.release}>{movie.release_date}</div>
+                            <div className={styles.genre}>{movie.genres.join(', ')}</div>
+                        </div>
+                    ))}
+                    {this.props.fetchedMovieList && this.props.fetchedMovieList.map((movie) => (
                         <div key={movie.id} className={`js-movie-item ${styles.movie}`}>
                             <Link href={'/movie/'+ movie.id}>
                                <a>

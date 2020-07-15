@@ -1,18 +1,14 @@
 import App from '../../src/client/components/App/index';
 
-export async function getStaticPaths() {
-    return {
-        paths: [
-            '/movie/asd123123asd',
-            { params: { id: 'asd123123asd' } },
-        ],
-        fallback: true,
-    }
+const AppPrefetchedMovie = (props) => (
+    <App fetchedMovie={props.data.fetchedMovie}/>
+)
+
+export async function getServerSideProps ({ req, query, params }) {
+    const response = await fetch('https://reactjs-cdp.herokuapp.com/movies/' + query.id);
+    const res = await response.json();
+    const data = { fetchedMovie: res};
+    return { props: { data } };
 }
 
-export async function getStaticProps({params}) {
-    const {id} = params;
-    return { props: { id: id } }
-}
-
-export default App
+export default AppPrefetchedMovie;

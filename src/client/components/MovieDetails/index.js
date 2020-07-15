@@ -11,7 +11,7 @@ class MovieDetails extends PureComponent {
             this.props.onHideMovie(this.props.searchParams);
         };
     }
-    componentWillMount() {
+    componentDidMount() {
         const { id, chosenMovie } = this.props;
         if(!chosenMovie || !(chosenMovie.id == id)) {
             this.props.onRequestMovie(id);
@@ -19,7 +19,7 @@ class MovieDetails extends PureComponent {
     }
 
     render() {
-            return (
+               return (
                 <div className={`js-movie-details ${styles.wrapper}`}>
                 {this.props.chosenMovie?
                     <React.Fragment>
@@ -31,6 +31,19 @@ class MovieDetails extends PureComponent {
                         <div className={styles.release}>{this.props.chosenMovie.release_date} </div>
                         <div className={styles.runtime}>{this.props.chosenMovie.runtime} min</div>
                         <div className={styles.overview}>{this.props.chosenMovie.overview} min</div>
+                        <a href="/" className={styles.close} onClick={() => this.handleCloseClick()}>x</a>
+                    </React.Fragment> : null
+                }
+                {!this.props.chosenMovie && this.props.fetchedMovie?
+                    <React.Fragment>
+                        <img className={styles.poster} src={this.props.fetchedMovie.poster_path}></img>
+                        <div className={styles.title}>{this.props.fetchedMovie.title}
+                            <div className={styles.rating}>{this.props.fetchedMovie.vote_average}</div>
+                        </div>
+                        <div>{this.props.fetchedMovie.tagline}</div>
+                        <div className={styles.release}>{this.props.fetchedMovie.release_date} </div>
+                        <div className={styles.runtime}>{this.props.fetchedMovie.runtime} min</div>
+                        <div className={styles.overview}>{this.props.fetchedMovie.overview} min</div>
                         <a href="/" className={styles.close} onClick={() => this.handleCloseClick()}>x</a>
                     </React.Fragment> : null
                 }
